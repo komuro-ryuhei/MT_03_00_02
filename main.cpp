@@ -4,6 +4,7 @@
 
 const char kWindowTitle[] = "LC1B_13_コムロ_リュウヘイ";
 
+// 加算
 Matrix4x4 Add(const Matrix4x4& m1, const Matrix4x4& m2) {
 	Matrix4x4 result;
 
@@ -15,6 +16,7 @@ Matrix4x4 Add(const Matrix4x4& m1, const Matrix4x4& m2) {
 	return result;
 }
 
+// 減算
 Matrix4x4 Subtract(const Matrix4x4& m1, const Matrix4x4& m2) {
 	Matrix4x4 result;
 
@@ -26,6 +28,7 @@ Matrix4x4 Subtract(const Matrix4x4& m1, const Matrix4x4& m2) {
 	return result;
 }
 
+// 積
 Matrix4x4 Multiply(const Matrix4x4& m1, const Matrix4x4& m2) {
 	Matrix4x4 result = {};
 
@@ -39,6 +42,7 @@ Matrix4x4 Multiply(const Matrix4x4& m1, const Matrix4x4& m2) {
 	return result;
 }
 
+// 逆行列
 Matrix4x4 Inverse4x4(Matrix4x4& matrix) {
 	Matrix4x4 result = {};
 
@@ -137,6 +141,7 @@ Matrix4x4 Inverse4x4(Matrix4x4& matrix) {
 	return result;
 }
 
+// 転置行列
 Matrix4x4 Transpose4x4(Matrix4x4& matrix) {
 	Matrix4x4 result;
 
@@ -148,6 +153,7 @@ Matrix4x4 Transpose4x4(Matrix4x4& matrix) {
 	return result;
 }
 
+// 単位行列の作成
 Matrix4x4 MakeIdentity4x4() {
 	Matrix4x4 identity;
 
