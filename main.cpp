@@ -4,6 +4,18 @@
 
 const char kWindowTitle[] = "LC1B_13_コムロ_リュウヘイ";
 
+static const int kRowHeight = 20;
+static const int kColumnWidth = 60;
+
+void MatrixScreenPrintf(int x, int y, Matrix4x4 matrix) {
+	for (int row = 0; row < 4; row++) {
+		for (int column = 0; column < 4; column++) {
+			Novice::ScreenPrintf(
+				x + column * kColumnWidth, y + row * kRowHeight, "%.02f", matrix.m[row][column]);
+		}
+	}
+}
+
 // 加算
 Matrix4x4 Add(const Matrix4x4& m1, const Matrix4x4& m2) {
 	Matrix4x4 result;
@@ -163,18 +175,6 @@ Matrix4x4 MakeIdentity4x4() {
 		}
 	}
 	return identity;
-}
-
-static const int kRowHeight = 20;
-static const int kColumnWidth = 60;
-
-void MatrixScreenPrintf(int x, int y, Matrix4x4 matrix) {
-	for (int row = 0; row < 4; row++) {
-		for (int column = 0; column < 4; column++) {
-			Novice::ScreenPrintf(
-				x + column * kColumnWidth, y + row * kRowHeight, "%.02f", matrix.m[row][column]);
-		}
-	}
 }
 
 // Windowsアプリでのエントリーポイント(main関数)
